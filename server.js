@@ -3,10 +3,10 @@ const express = require('express')
 const app = express()
 const MongoClient = require('mongodb').MongoClient
 const PORT = 8000
-require('dotenv').config()
+// require('dotenv').config()
 
 let db,
-    dbConnectionStr = process.env.DB_STRING,
+    dbConnectionStr = 'mongodb+srv://demo:demo@favmovies.zc3p8yh.mongodb.net/',
     dbName = 'favMovies1'
 
 MongoClient.connect(dbConnectionStr, {useUnifiedTopology: true})
