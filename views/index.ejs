@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Movies Ranked</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Favorite Movies</h1>
+    <ol class="movies">
+        <% for (let i = 0; i < movies.length; i++) {%>
+            <li class="movie">
+                <span><%= movies[i].name %></span>
+                <span><%= movies[i].rank %></span>
+                <span class="fa-solid fa-arrow-up"></span>
+                <span class="fa-solid fa-arrow-down"></span>
+                <span class='fa fa-trash'></span>
+            </li>
+        <% } %>
+    </ol>
+
+    <div class="addMovies">
+        <h2>Add a Movie:</h2>
+        <form action="addMovie" method="POST">
+            <div class="flex-container">
+                <div class="flex">
+                    <label for="movieName">Movie Name</label>
+                    <input type="text" name="movieName" id="movieName">
+                </div>
+                <div class="flex">
+                    <label for="movieRank">Ranking (1-10)</label>
+                    <input type="number" name="movieRank" id="movieRank" max="10" min="0" step="0.1">
+                </div>
+            </div>
+             <br><br>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
